@@ -1,2 +1,1 @@
-# mypc
-# mypc
+File Configurasi Workstation

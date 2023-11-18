@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <!-- Menu item for your addon in Home Menu -->
+        <menuitem id="felino" name="felino menu" sequence="1" />
+        <!-- You can add more menu items or actions here -->
+    </data>
+</odoo>
+
