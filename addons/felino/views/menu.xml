@@ -1,8 +1,16 @@
 <odoo>
-    <data>
-        <!-- Menu item for your addon in Home Menu -->
-        <menuitem id="felino" name="felino menu" sequence="1" />
-        <!-- You can add more menu items or actions here -->
-    </data>
+
+<act_window id="action_todo_task"
+ name="To-do Task"
+ res_model="felino.felino"
+ view_mode="tree,form" />
+ <!-- Menu item for your addon in Home Menu -->
+    <menuitem id="felinomenu" name="felinomenusatu"  action="action_todo_task" sequence="1" />
+<!-- You can add more menu items or actions here -->
+<!-- Action to open To-do Task list -->
+ 
+
+
+
 </odoo>
 
