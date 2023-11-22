@@ -2,23 +2,13 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="felino.list">
-      <field name="name">felino list</field>
-      <field name="model">felino.felino</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
+  
 
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="felino.action_window">
-      <field name="name">felino window</field>
+      <field name="name">fwindow</field>
       <field name="res_model">felino.felino</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -55,7 +45,42 @@
     <menuitem name="Server to list" id="felino" parent="felino.menu_2"
               action="felino.action_server"/>
 
-     
+  <template id="template">
+  <t t-name="template">
+  <p>
+  Hello word
+  </p>
+  </t>
+  </template>
+
+        <template id="listing">
+          <ul>
+            <li t-foreach="objects" t-as="object">
+              <a t-attf-href="#{ root }/objects/#{ object.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+
+       
         
   </data>
+  <act_window id="action_todo_task"
+ name="To-do Task"
+ res_model="felino.felino"
+ view_mode="tree,form" />
+ <!-- Menu item for your addon in Home Menu -->
+    <menuitem id="felinomenu" name="felinomenusatu"  action="action_todo_task" sequence="1" />
+<!-- You can add more menu items or actions here -->
+<!-- Action to open To-do Task list -->
 </odoo>
